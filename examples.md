@@ -5,7 +5,7 @@
         1.oc adm policy add-scc-to-group anyuid system:serviceaccounts:NAMESPACE -> dedicated scc
           oc create ns NAMESPACE || true
           oc label namespace NAMESPACE istio-injection=enabled
-          oc apply  -n NAMESPACE -f samples/bookinfo/platform/kube/bookinfo.yaml
+          oc apply  -n NAMESPACE -f bookinfo/platform/kube/bookinfo.yaml
           oc -n NAMESPACE apply -f NetworkAttachmentDefinition.yaml
           oc -n NAMESPACE apply -f bookinfo/networking/destination-rule-all.yaml
     3.

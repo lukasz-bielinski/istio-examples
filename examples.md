@@ -2,7 +2,7 @@
 2.  Book info app on OKD - scale up application
     1. anyuid
     2. NetworkAttachmentDefinition
-        1.oc adm policy add-scc-to-group anyuid system:serviceaccounts:NAMESPACE
+        1.oc adm policy add-scc-to-group anyuid system:serviceaccounts:NAMESPACE -> dedicated scc
           oc create ns NAMESPACE || true
           oc label namespace NAMESPACE istio-injection=enabled
           oc apply  -n NAMESPACE -f samples/bookinfo/platform/kube/bookinfo.yaml
